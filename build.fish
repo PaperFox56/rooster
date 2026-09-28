@@ -3,10 +3,10 @@
 function build
     set SRC src/*.c
     set CC gcc
-    set CFLAGS --std=c99 -Wall -Werror
+    set CFLAGS --std=c99 -Wall -Werror -l raylib
 
     mkdir -p bin
-    $CC $SRC -o bin/rooster || return 1
+    $CC $SRC -o bin/rooster $CFLAGS || return 1
 end
 
 function run
